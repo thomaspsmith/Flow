@@ -91,8 +91,8 @@ public class FlowUnitTest {
     }
     
     @Test (expected=RuntimeException.class)
-    public void testInvalidCalculator()
-    {
+    public void testInvalidCalculator() {
+        
         List<IChannelSegment> segments = new ArrayList<IChannelSegment>();
         segments.add( SegmentFactory.createSegment( 1,2,3 ) );
         
