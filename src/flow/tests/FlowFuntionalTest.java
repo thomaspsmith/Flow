@@ -48,7 +48,6 @@ public class FlowFuntionalTest
     {
         List<IChannelSegment> segments = new ArrayList<IChannelSegment>();
 
-        
         // single segment
         segments.add( SegmentFactory.createSegment( 5.0, 2.0, 2.0 ) );
         double volume = Flow.getFlow( segments,  calc );

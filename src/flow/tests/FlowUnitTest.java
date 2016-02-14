@@ -70,7 +70,7 @@ public class FlowUnitTest {
     @Test 
     public void testUnknownSegments() {
         
-        // create a custom, arbitrary segment type that someone else has thrown in somehow
+        // create a custom, arbitrary segment type that someone else has thrown in
         class LocalSeg implements IChannelSegment {
 
             @Override
@@ -88,5 +88,19 @@ public class FlowUnitTest {
         segs.add( SegmentFactory.createSegment( 1, 1, 1 ) );
         volume = Flow.getFlow(segs, calc);
         assertEquals( volume, 51, delta );
+    }
+    
+    @Test (expected=RuntimeException.class)
+    public void testInvalidCalculator()
+    {
+        List<IChannelSegment> segments = new ArrayList<IChannelSegment>();
+        segments.add( SegmentFactory.createSegment( 1,2,3 ) );
+        
+        IVolumeCalculator badCalc = null;
+        
+        // should throw
+        double volume = Flow.getFlow( segments, badCalc );
+        
+        fail();
     }
 }

@@ -27,6 +27,10 @@ public class Flow {
      */
     public static double getFlow( List<IChannelSegment> segments, IVolumeCalculator vstr ) {
         
+        // incorrect invocation. Hit the brakes.
+        if( vstr == null ) 
+            throw new RuntimeException("Invalid method invocation - must provide non-null IVolumeCalculator");
+
         double volume = 0.0;
         if( segments != null ) {
             for ( IChannelSegment segment : segments) {
