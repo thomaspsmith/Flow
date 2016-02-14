@@ -1,0 +1,11 @@
+Examining/using Flow:
+
+1. Start code inspection with Flow.java and move on from there. 
+        Classes of interest are SquareChannelSegment.java 
+        and GeometricVolumeCalculator.java
+        
+2. To see in action, run either "AllTests.java" JUnit suite, or the "FlowFunctionalTest.java" test case
+
+3. There are several code files in place that are non-functional (commented out) but are there to 
+    demonstrate how the calculator could work with multiple types of segment. This wasn't asked for
+    in the original problem, and hence is not enabled.
